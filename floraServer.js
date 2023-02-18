@@ -1,6 +1,12 @@
 var express = require("express");
 var app = express();
 var port = 3000;
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views')
+app.engine('ejs', require('ejs').__express)
+app.use(express.static(__dirname + '/views'))
+
 //receive request from the client side
 app.post('/post',(req,res) => {
     res.header("Access-Control-Allow-Origin","*");
@@ -38,4 +44,23 @@ app.post('/post',(req,res) => {
 }
 }
 ).listen(port);
+
+app.get('/',(req,res) => {
+    res.render('test');
+})
+
+app.get('/milkweed',(req,res) => {
+    res.render('milkweed.ejs');
+})
+
+app.get('/infooutput',(req,res) => {
+    res.render('infooutput.ejs');
+})
+
+app.get('/welcomepage',(req,res) => {
+    res.render('welcomepage.ejs');
+})
+
+
+
 console.log("Server is running!");

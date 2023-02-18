@@ -1,0 +1,23 @@
+{
+  "name": "flora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "floraServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node floraServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdewett/flora.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdewett/flora/issues"
+  },
+  "homepage": "https://github.com/hdewett/flora#readme",
+  "dependencies": {
+    "ejs": "^3.1.8"
+  }
+}
