@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="En">
+
+<head>
+  <meta charseat="UTF-8">
+  <title> FLORA </title>
+  <link rel="stylesheet" type="text/css" href="test.css" title="style" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+ <!-- TAILWIND START -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'white': '#ffffff',
+        'fruitBlue': '#d5e3f9',
+        'fruitBlueDark':'#B2D1FF',
+        'fruitYellow':'#FFF48D',
+        'fruitPink': '#DB6868',
+        'fruitPinkDark':'#7E2F2',
+        'fruitBrown': '#613206',
+        'dangerRed': '#FF0000'
+    },
+      }
+    }
+  }
+  </script>
+<!-- TAILWIND END -->
+
+  <script src="data.js" defer></script>
+  <script src="floraClient.js"></script> <!--link to js file-->
+
+</head>
+
+<body>
+
+  <h1 class="text-3xl font-bold underline text-black">
+    Hello world!
+  </h1>
+
+  
+  <section class="fruitsSection">
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pt-12 flex justify-center">
+
+<!-- CARD STARTS HERE -->
+        <div class="product fruit_id-10 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
+            <div class="click-to-pop " id="moreInfoBtn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter10">
+            <div class="productImage rounded-t-2xl mb-1  max-w-xs hover:scale-105 transition duration-300 ease-in-out">
+                <img id="fruitImage" class="h-48 w-full object-cover" src="https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/milkweed-plant-monarch-butterfly-shutterstock-com_12623.jpg" alt="fruits">
+            </div>
+          </div>
+            <div class="flex justify-between mt-3 mb-2">
+              <strong class="text-fruitBrown productName text-lg flex px-3">Milkweed</strong>
+              <strong class="text-fruitBrown productName text-lg flex px-3">LOREM</strong>
+                <!-- <i class="fa-solid fa-heart-circle-plus fav_btn flex px-3" data-id="plus" data-fruitid="10"></i> -->
+            </div>
+                <a href="/milkweed"><button class="moreInfoBtn cart_btn cart_plus" data-id="plus" data-fruitid="10">More Info</button></a>
+        </div>
+<!-- CARD ENDS HERE -->
+
+<!-- CARD STARTS HERE -->
+<div class="product fruit_id-10 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
+  <div class="productImage rounded-t-2xl mb-1  max-w-xs hover:scale-105 transition duration-300 ease-in-out">
+      <img id="fruitImage" class="h-48 w-full object-cover" src="https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/milkweed-plant-monarch-butterfly-shutterstock-com_12623.jpg" alt="fruits">
+  </div>
+
+  <div class="flex justify-between mt-3 mb-2">
+    <strong class="text-fruitBrown productName text-lg flex px-3">Sunflower</strong>
+    <strong class="text-fruitBrown productName text-lg flex px-3">LOREM</strong>
+      <!-- <i class="fa-solid fa-heart-circle-plus fav_btn flex px-3" data-id="plus" data-fruitid="10"></i> -->
+  </div>
+      <a href="/plant2"><button class="add_to_cart cart_btn cart_plus" data-id="plus" data-fruitid="10">More Info</button></a>
+</div>
+<!-- CARD ENDS HERE -->
+
+<!-- CARD STARTS HERE -->
+<div class="product fruit_id-10 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
+  <div class="click-to-pop " id="moreInfoBtn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter10">
+  <div class="productImage rounded-t-2xl mb-1  max-w-xs hover:scale-105 transition duration-300 ease-in-out">
+      <img id="fruitImage" class="h-48 w-full object-cover" src="https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/milkweed-plant-monarch-butterfly-shutterstock-com_12623.jpg" alt="fruits">
+  </div>
+</div>
+  <div class="flex justify-between mt-3 mb-2">
+    <strong class="text-fruitBrown productName text-lg flex px-3">Sunflower</strong>
+    <strong class="text-fruitBrown productName text-lg flex px-3">LOREM</strong>
+      <!-- <i class="fa-solid fa-heart-circle-plus fav_btn flex px-3" data-id="plus" data-fruitid="10"></i> -->
+  </div>
+      <a href="/plant3"><button class="add_to_cart cart_btn cart_plus" data-id="plus" data-fruitid="10">More Info</button></a>
+</div>
+<!-- CARD ENDS HERE -->
+    
+    </div>
+    </section>
+  
+  <!-- <h1>LOOK HERE</h1>
+  <span>This species is called:</span>
+  <span id="plant"></span>
+  <span id="species"></span> -->
+
+</body>
+
+</html>
