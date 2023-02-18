@@ -1,8 +1,15 @@
 
 var url = "http://localhost:3000/post";
 
+
+function start() {
+        document.getElementById("tree").className="tree";
+        document.getElementById("start").style.display="none";
+        document.getElementById("search").style.display="block"; 
+}
+
 function load() {
-    var loc = document.getElementById("location").value;
+    var loc = document.getElementById("region").value;
     $.post(
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
