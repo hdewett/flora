@@ -26,11 +26,15 @@ function load() {
         response);
 }
 
+function displayInfo() {
+
+}
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        alert("worked");
+        var resp = response['result'];
+        document.getElementById("output").setAttribute(resp);
+        displayInfo();
     }
 }
-

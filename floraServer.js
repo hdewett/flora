@@ -25,8 +25,10 @@ app.post('/post',(req,res) => {
             stop_sequences: [],
             return_likelihoods: 'NONE'
             });
-        console.log(`Prediction: ${response.body.generations[0].text}`);
+        var plantList = `Prediction: ${response.body.generations[0].text}`;
+        console.log(plantList);                                                           
         var jsontext = JSON.stringify({
+            'result':plantList,
             'action':'infoLoaded'
             });
             console.log(jsontext);
