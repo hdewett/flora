@@ -19,30 +19,39 @@ function load() {
         response);
 }
 
-function parse(resp) {
-    var out = [];var i;
-    for (i = 0;i<resp.length();i++) {
-        var line="";
-        if (resp.substring(i,i+1)=="\n") {
-            i=i+1; 
-            while (resp.substring(i,i+1)!="\n") {
-                line = line + resp.charAt(j);
-                i=i+1;
-            }
+/*function turnArray(s) {
+    var out = [];var i; var line;
+    for (i=0;i<s.length;i++) {
+        if (s.charAt(i)=="\n") {
+            alert("brek");
+            out.push(line); 
+            line="";
         }
+        line=line+s.charAt(i);
+    }
+} */
+
+function turnArray(s) {
+    var out=["start"];
+    while (s.length>0) {
+        var i = s.indexOf("<br/>");
+        s.substring(i+1,s.length);
+        i = s.indexOf("<br/>");
+        var line = s.substring(0,i);
         out.push(line);
-    } alert(parse);
+    }
+
 }
 
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result'];
-        var stringCpy = resp.slice();
-        //alert(stringCpy);
-        //parse(stringCpy);  
+        var resp = response['result']; 
+        resp=resp.replace(/\n/g,"<br/>");
         document.getElementById("output").innerHTML=resp;
+        var strcpy = resp.slice();
+        turnArray(strcpy);
     }
     
 }
