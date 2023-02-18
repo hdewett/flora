@@ -21,7 +21,7 @@ function load() {
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
             'location': loc,
-            'search':'searchInfo'
+            'action':'searchInfo'
         }),
         response);
 }
@@ -29,8 +29,8 @@ function load() {
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
-    if (response['action'] == 'createDone') {
-        window.location.href = "profile.html";
+    if (response['action'] == 'infoLoaded') {
+        alert("worked");
     }
 }
 

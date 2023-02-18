@@ -1,0 +1,39 @@
+var express = require("express");
+var app = express();
+var port = 3000;
+//receive request from the client side
+app.post('/post',(req,res) => {
+    res.header("Access-Control-Allow-Origin","*");
+    console.log("New express client");
+    console.log("Received: ");
+    //console.log(JSON.parse(req.query['data']));
+    var z = JSON.parse(req.query['data']);
+    if (z['action']=='searchInfo') {
+        var loc = "what are some native plants for " + z['location'] + '\n\n';
+        const cohere = require('cohere-ai');
+        cohere.init('h7JSQUtT7IFzLNDPRqTpxTbjvupYA3e7sbRYCrLe'); // This is your trial API key
+        (async () => {
+            const response = await cohere.generate({
+            model: 'command-xlarge-nightly',
+            prompt: loc,
+            max_tokens: 300,
+            temperature: 0.9,
+            k: 0,
+            p: 0.75,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+            });
+        console.log(`Prediction: ${response.body.generations[0].text}`);
+        var jsontext = JSON.stringify({
+            'action':'infoLoaded'
+            });
+            console.log(jsontext);
+            res.send(jsontext);
+})();
+    //check if the request action is evaluatePassword
+}
+}
+).listen(port);
+console.log("Server is running!");
