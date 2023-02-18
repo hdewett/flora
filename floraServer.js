@@ -25,7 +25,7 @@ app.post('/post',(req,res) => {
             stop_sequences: [],
             return_likelihoods: 'NONE'
             });
-        var plantList = `Prediction: ${response.body.generations[0].text}`;
+        var plantList = `${response.body.generations[0].text}`;
         console.log(plantList);                                                           
         var jsontext = JSON.stringify({
             'result':plantList,
