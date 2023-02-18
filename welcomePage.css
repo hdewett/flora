@@ -1,5 +1,51 @@
-html{
-    background-color: #a5c882;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
+html {
+  background-color: #a5c882;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+
+body {
+  overflow: hidden;
+}
+
+#tree {
+  position: absolute;
+  margin: 7em -244px;
+}
+.tree {
+  position: absolute;
+  left: 30%;
+  margin: 7em -244px;
+  animation: slide 2s;
+}
+
+@keyframes slide {
+  0% { 
+    left: 50%;
   }
+  100% {
+    left: 30%;
+  }
+}
+#search {
+  position: fixed;
+  right: 42%;
+  top: 45%;
+  z-index: -1;
+}
+#start {
+  position: absolute;
+  top: 72%;
+  left: 46%;
+}
+footer {
+  position: absolute;
+  top: 90%;
+  left: 43%;
+}
+h1 {
+  
+}
+#enter {
+  display: none;
+}
