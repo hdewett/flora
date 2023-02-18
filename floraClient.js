@@ -31,15 +31,17 @@ function parse(resp) {
             }
         }
         out.push(line);
-    }
-    alert(out);
+    } alert(parse);
 }
 
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result'];//parse(resp);  
+        var resp = response['result'];
+        var stringCpy = resp.slice();
+        //alert(stringCpy);
+        //parse(stringCpy);  
         document.getElementById("output").innerHTML=resp;
     }
     
