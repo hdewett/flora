@@ -6,7 +6,7 @@
   <title> FLORA </title>
   <link rel="stylesheet" type="text/css" href="welcomePage.css" title="style" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="welcomePage.js"></script> <!--link to js file-->
+  <script src="floraClient.js"></script> <!--link to js file-->
 
 </head>
 
@@ -14,14 +14,11 @@
   <header>
     <h1> FLORA </h1> <!--change header-->
   </header>
-
-  <img id="tree" src="https://i.pinimg.com/564x/0a/15/f0/0a15f032c3bf0730497ad44712bd09d5.jpg">
-  <form>
-    
-    <label for="location">INPUT YOUR LOCATION</label><br>
-    <input type="location" id="location" name="location">
-  </form>
-  <button onclick="start()" id="start">START</button> <!--when the button click, centre photo slides to reveal form for location-->
+  <div id="startBoard">
+    <img id="tree" src="https://i.pinimg.com/564x/0a/15/f0/0a15f032c3bf0730497ad44712bd09d5.jpg">
+    <button onclick="start()" id="start">START</button> <!--when the button click, centre photo slides to reveal form for location-->
+  </div>
+  
   
   <footer>(c) Authors: <span>sushiLovers</span></footer>
 </body>
