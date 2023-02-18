@@ -3,6 +3,7 @@ var url = "http://localhost:3000/post";
 
 
 function start() {
+    alert("hello");
         document.getElementById("tree").className="tree";
         document.getElementById("start").style.display="none";
         document.getElementById("search").style.visibility="visible";
