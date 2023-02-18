@@ -9,7 +9,7 @@ function start() {
 }
 
 function load() {
-    var loc = document.getElementById("region").value;
+    var loc = document.getElementById("location").value;
     $.post(
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
@@ -19,21 +19,27 @@ function load() {
         response);
 }
 
-function displayInfo(resp) {
-    var out="";
-    for (var i;i<resp.length;i++) {
-        if (resp.charAt(i)>=48 && resp.charAt(i)<=57) {
-            out= out + "\n";
+function parse(resp) {
+    var out = [];var i;
+    for (i = 0;i<resp.length();i++) {
+        var line="";
+        if (resp.substring(i,i+1)=="\n") {
+            i=i+1; 
+            while (resp.substring(i,i+1)!="\n") {
+                line = line + resp.charAt(j);
+                i=i+1;
+            }
         }
-        out = out + resp.charAt(i);
+        out.push(line);
     }
-    return out;
+    alert(out);
 }
+
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result'];
+        var resp = response['result'];parse(resp);  
         document.getElementById("output").innerHTML=resp;
     }
     
