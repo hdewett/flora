@@ -3,14 +3,16 @@ var url = "http://localhost:3000/post";
 
 
 function start() {
-    alert("hello");
         document.getElementById("tree").className="tree";
         document.getElementById("start").style.display="none";
         document.getElementById("search").style.visibility="visible";
 }
-
 function load() {
     var loc = document.getElementById("location").value;
+    document.location.href="/infooutput",true;
+}
+
+function send() {
     $.post(
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
@@ -50,9 +52,8 @@ function response(data,status) {
     if (response['action'] == 'infoLoaded') {
         var resp = response['result']; 
         resp=resp.replace(/\n/g,"<br/>");
+        alert(resp);
         document.getElementById("output").innerHTML=resp;
-        var strcpy = resp.slice();
-        turnArray(strcpy);
     }
     
 }
