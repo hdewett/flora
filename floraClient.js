@@ -3,20 +3,13 @@ var url = "http://localhost:3000/post";
 
 
 function start() {
-        /*var newSpan=document.createElement("span");
-        $(newSpan).attr("id","locationSpan"); //set attribute by this
-        var form=document.createElement("form");
-        $(form).attr("label","INPUT YOUR LOCATION");
-        $(form).attr("type","location");
-        $(form).attr("id","location");
-        $(form).attr("name","location");
-        $(newSpan).append(form);*/
-        window.location.href="infoOutput.html";
-            
+        document.getElementById("tree").className="tree";
+        document.getElementById("start").style.display="none";
+        document.getElementById("search").style.visibility="visible";
 }
 
 function load() {
-    var loc = document.getElementById("region").value;
+    var loc = document.getElementById("location").value;
     $.post(
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
@@ -26,15 +19,30 @@ function load() {
         response);
 }
 
-function displayInfo() {
-
+function parse(resp) {
+    var out = [];var i;
+    for (i = 0;i<resp.length();i++) {
+        var line="";
+        if (resp.substring(i,i+1)=="\n") {
+            i=i+1; 
+            while (resp.substring(i,i+1)!="\n") {
+                line = line + resp.charAt(j);
+                i=i+1;
+            }
+        }
+        out.push(line);
+    } alert(parse);
 }
+
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
         var resp = response['result'];
-        document.getElementById("output").setAttribute(resp);
-        displayInfo();
+        var stringCpy = resp.slice();
+        //alert(stringCpy);
+        //parse(stringCpy);  
+        document.getElementById("output").innerHTML=resp;
     }
+    
 }
