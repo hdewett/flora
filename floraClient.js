@@ -34,7 +34,6 @@ function response(data,status) {
     console.log(data);
     if (response['action'] == 'infoLoaded') {
         var resp = response['result'];
-        document.getElementById("output").setAttribute(resp);
-        displayInfo();
+        displayInfo(resp)
     }
 }
