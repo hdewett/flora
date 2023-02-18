@@ -41,7 +41,8 @@ function response(data,status) {
     console.log(data);
     if (response['action'] == 'infoLoaded') {
         var resp = response['result'];
-        resp = displayInfo(resp)
+        displayInfo(resp);
         document.getElementById("output").innerHTML=resp;
     }
+    
 }
