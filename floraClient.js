@@ -11,7 +11,9 @@ function start() {
         $(form).attr("id","location");
         $(form).attr("name","location");
         $(newSpan).append(form);*/
-        window.location.href="infoOutput.html";
+       // window.location.href="infoOutput.html";
+        document.getElementById("tree").className="tree";
+        document.getElementById("start").style.display="none";
             
 }
 

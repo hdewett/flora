@@ -3,7 +3,7 @@
 
 <head>
   <meta charseat="UTF-8">
-  <title> FLORA </title>
+  <title> Flora </title>
   <link rel="stylesheet" type="text/css" href="welcomePage.css" title="style" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="floraClient.js"></script> <!--link to js file-->
@@ -12,14 +12,24 @@
 
 <body>
   <header>
-    <h1> FLORA </h1> <!--change header-->
+    <h1> flora </h1> <!--change header-->
   </header>
   <div id="startBoard">
     <img id="tree" src="tree1.jpg"><br><br>
-    <button onclick="start()" id="start">START</button> <!--when the button click, centre photo slides to reveal form for location-->
   </div>
-  
-  
+  <div id="search">
+    <form action="/infoOutput.html">
+      <label for="location">Where do you live?</label>
+      <input type="text" id="location" name="location" value=" input city name here">
+      <input id="enter" type="submit" value="enter">
+    </form>
+  </div>
+  <div id="start">
+    <button onclick="start()" id="start">start</button>
+    <!--when the button click, centre photo slides to reveal form for location-->
+  </div>
+
+
   <footer>(c) Authors: <span>sushiLovers</span></footer>
 </body>
 
