@@ -26,9 +26,6 @@ html {
   z-index: -1;
 }
 
-#enter {
-  display: none;
-}
 
 footer {
   position: fixed;

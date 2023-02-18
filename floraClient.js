@@ -39,7 +39,7 @@ function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result'];parse(resp);  
+        var resp = response['result'];//parse(resp);  
         document.getElementById("output").innerHTML=resp;
     }
     
