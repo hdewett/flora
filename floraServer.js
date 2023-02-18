@@ -46,7 +46,7 @@ app.post('/post',(req,res) => {
 ).listen(port);
 
 app.get('/',(req,res) => {
-    res.render('test');
+    res.render('welcomepage.ejs');
 })
 
 app.get('/milkweed',(req,res) => {
