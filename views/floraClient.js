@@ -1,6 +1,6 @@
 
 var url = "http://localhost:3000/post";
-
+var loc;
 
 function start() {
         document.getElementById("tree").className="tree";
@@ -8,7 +8,7 @@ function start() {
         document.getElementById("search").style.visibility="visible";
 }
 function load() {
-    var loc = document.getElementById("location").value;
+    loc = document.getElementById("location").value;
     document.location.href="/infooutput",true;
 }
 
@@ -22,17 +22,15 @@ function send() {
         response);
 }
 
-/*function turnArray(s) {
-    var out = [];var i; var line;
-    for (i=0;i<s.length;i++) {
-        if (s.charAt(i)=="\n") {
-            alert("brek");
-            out.push(line); 
-            line="";
-        }
-        line=line+s.charAt(i);
-    }
-} */
+function parse(s) {
+    $.post(
+        url+'?data='+JSON.stringify
+        ({ //compare the input name with the database
+            'string': s,
+            'action':'parseString'
+        }),
+        response);
+}
 
 function turnArray(s) {
     var out=["start"];
@@ -50,10 +48,16 @@ function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result']; 
-        resp=resp.replace(/\n/g,"<br/>");
-        alert(resp);
-        document.getElementById("output").innerHTML=resp;
+        var resp = response['result']; alert("RAW: "+resp);
+        var strcpy=resp.slice(); parse(s);
+        /*resp=resp.replace(/\n/g,"<br/>");
+        resp=resp.replace(",","<br/>");
+        document.getElementById("output").innerHTML=resp;*/
+    }
+    else if (response['action']=='stringParsed') {
+        alert("step2Check");
+        var resp2 = response['result'];
+        document.getElementById("output").innerHTML=resp2;
     }
     
 }
