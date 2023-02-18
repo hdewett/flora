@@ -13,21 +13,20 @@ function load() {
 }
 
 function displayInfo(resp) {
+    var out="";
     for (var i;i<resp.length;i++) {
-        if (resp.charAt(i)>='0' && resp.charAt(i)<='9') {
-            alert(resp.charAt(i));
-            resp = resp.substring(0,i)+"<br>"+resp.substring(i,resp.length);
+        if (resp.charAt(i)>=48 && resp.charAt(i)<=57) {
+            out= out + "\n";
         }
+        out = out + resp.charAt(i);
     }
-    alert(resp);
-    return resp;
+    return out;
 }
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
         var resp = response['result'];
-        displayInfo(resp);
         document.getElementById("output").innerHTML=resp;
     }
     
