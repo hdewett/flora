@@ -3,49 +3,37 @@ html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
-
-body {
-  overflow: hidden;
-}
-
-#tree {
-  position: absolute;
-  margin: 7em -244px;
-}
 .tree {
-  position: absolute;
-  left: 30%;
-  margin: 7em -244px;
+  position: relative;
+  left: -25%;
   animation: slide 2s;
 }
 
 @keyframes slide {
-  0% { 
-    left: 50%;
+  0% { left: 0%;
   }
   100% {
-    left: 30%;
+    left: -25%;
   }
 }
 #search {
   position: fixed;
-  right: 42%;
-  top: 45%;
   z-index: -1;
+  display: none;
+  top: 35%;
+  left: 30%;
+  right: 30%;
+  margin: auto;
 }
-#start {
-  position: absolute;
-  top: 72%;
-  left: 46%;
-}
-footer {
-  position: absolute;
-  top: 90%;
-  left: 43%;
-}
-h1 {
-  
-}
+
 #enter {
   display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 2%;
+  left: 40%;
+  right: 40%;
+  margin: auto;
 }
