@@ -5,7 +5,7 @@ var url = "http://localhost:3000/post";
 function start() {
         document.getElementById("tree").className="tree";
         document.getElementById("start").style.display="none";
-        document.getElementById("search").style.display="block"; 
+        document.getElementById("search").style.visibility="visible";
 }
 
 function load() {
