@@ -12,13 +12,18 @@ function start() {
         $(form).attr("name","location");
         $(newSpan).append(form);*/
         window.location.href="infoOutput.html";
-        
-        $.post(
-            url+'?data='+JSON.stringify
-            ({ //compare the input name with the database
-            }),
-            response);
             
+}
+
+function load() {
+    var loc = document.getElementById("region").value;
+    $.post(
+        url+'?data='+JSON.stringify
+        ({ //compare the input name with the database
+            'location': loc,
+            'search':'searchInfo'
+        }),
+        response);
 }
 
 function response(data,status) {
