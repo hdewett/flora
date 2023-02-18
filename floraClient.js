@@ -26,14 +26,21 @@ function load() {
         response);
 }
 
-function displayInfo() {
-
+function displayInfo(resp) {
+    for (var i;i<resp.length;i++) {
+        if (resp.charAt(i)>='0' && resp.charAt(i)<='9') {
+            resp = resp.substring(0,i)+"\n"+resp.substring(i,resp.length);
+        }
+    }
+    alert
+    return resp;
 }
 function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
         var resp = response['result'];
-        displayInfo(resp)
+        resp = displayInfo(resp)
+        document.getElementById("output").innerHTML=resp;
     }
 }
