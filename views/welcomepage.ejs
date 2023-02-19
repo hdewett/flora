@@ -16,21 +16,25 @@
 <body>
   <header>
     <h1> Flora </h1> <!--change header-->
+    <h2> Improving your local ecosystem, <br>
+      one garden at a time</h2>
   </header>
-  <div id="startBoard">
-    <img id="tree" src="photos/bg.png"><br><br>
-  </div>
   <div id="search">
     <form>
       <label for="location"></label>
       <input type="text" id="location" name="location" placeholder="Your Garden's location? ie. Toronto">
-      <button type="button" onclick="load()">done</button>
+      <button id="done" type="button" onclick="load()">search</button>
     </form>
   </div>
   <div id="start">
     <button onclick="start()" id="start" class="start">Start</button>
     <!--when the button click, centre photo slides to reveal form for location-->
   </div>
+  <div id="startBoard">
+    <img id="tree" src="photos/bg.png"><br><br>
+  </div>
+
+
 
 
   <footer>(c) Authors: <span>salmonLovers</span></footer>
