@@ -11,6 +11,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 h1 {
   color: white;
   font-size: 100px;
@@ -22,12 +23,14 @@ h2 {
   font-size: 40px;
   text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }
+
 #tree {
   max-width: 100%;
   max-height: 100%;
   margin-bottom: -5%;
 
 }
+
 .tree {
   position: relative;
   opacity: 0;
@@ -44,6 +47,7 @@ h2 {
     top: 100vw;
     opacity: 0;
   }
+
   100% {
     display: none;
   }
@@ -72,11 +76,16 @@ input[type=text] {
   font-size: 30px;
   width: 20%;
   padding: 1%;
-  
+  border-color: #ED4596;
+  border-width: 10px;
+
 }
+
 #done {
   background-color: white;
   border-radius: 50px;
   font-size: 20px;
   padding: 2%;
+  border-color: #ED4596;
+  border-width: 10px;
 }

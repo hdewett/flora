@@ -2,7 +2,7 @@ body {
   background-color: #5E7B51;
   color:#ecedef;
   margin-bottom: 10%;
-  font-family: 'Alegreya', serif;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 #title {
@@ -17,9 +17,6 @@ body {
   padding-left:10px;
 }
 
-.mainContainer {
-
-}
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(2,1fr);
