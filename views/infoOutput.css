@@ -1,3 +1,6 @@
+body {
+  background-color:#5E7B51;
+}
 .bannerContainer {
   background-color: #B2D1FF;
   display: flex;
@@ -32,8 +35,7 @@
  .fruitContainer {
    display: grid;
    grid-template-columns: repeat(3,1fr);
-   grid-gap: 2.5% 5%;
-   gap: 2.5% 5%;
+   gap: 10% 5%;
    margin-top:5%;
 
  }
@@ -76,7 +78,7 @@
  }
 
  .moreInfo {
-   background-color: #a5c882;
+   background-color: #FDA600;
    border:none;
    padding: 10px;
    border-radius: 0 0 20px 20px;
