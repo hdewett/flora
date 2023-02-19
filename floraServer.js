@@ -16,7 +16,7 @@ app.post('/post',(req,res) => {
     //console.log(JSON.parse(req.query['data']));
     var z = JSON.parse(req.query['data']);
     if (z['action']=='searchInfo') {
-        var loc = "Three native plants in " + z['location'] + 'in JSON array';
+        var loc = "Three native plants in " + z['location'] + 'just names';
          // This is your trial API key
         (async () => {
             const response = await cohere.generate({

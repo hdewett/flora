@@ -48,12 +48,14 @@ function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = JSON.parse(response['result']); 
+        var resp = response['result']; 
+        alert(resp);
+        document.getElementById("plantOne").setAttribute("id","WHITE OAK");
         /*var p1 = resp[0];var p2=resp[1];var p3=resp[2];
-        alert(p1);*/
+        alert(p1);
         document.getElementById("plantOne").setAttribute(resp[0]);
         document.getElementById("plantTwo").setAttribute(resp[1]);
-        document.getElementById("plantThree").setAttribute(resp[2]);
+        document.getElementById("plantThree").setAttribute(resp[2]);*/
     }
     /*else if (response['action']=='stringParsed') {
         alert("step2Check");

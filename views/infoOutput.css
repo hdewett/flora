@@ -75,7 +75,7 @@
    /* padding:38px; */
  }
 
- .addToCart {
+ .moreInfo {
    background-color: #a5c882;
    border:none;
    padding: 10px;
@@ -88,7 +88,7 @@
    width: 100%;
  }
 
- .addToCart:hover {
+ .moreInfo:hover {
    background-color: #DB6868;
    color: white;
  }
