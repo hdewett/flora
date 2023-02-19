@@ -1,64 +1,120 @@
-body {
-  padding-top: 20px;
-  background: #fbfbfb;
-}
+.bannerContainer {
+  background-color: #B2D1FF;
+  display: flex;
+  justify-content: space-between;
+  height:50vh;
 
-/* items */
+ }
 
-.grid-1 {
-  display: grid;
-  grid-template-columns: 350px 350px 350px;
-  grid-template-rows: 400px 400px 400px;
-  grid-gap: 20px;
-}
+ .bannerTxt {
+   display: flex;
+   padding-left: 50px;
+ }
 
-.grid-1 div {
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  }
+ .bannerImg{
+   display: flex;
+   padding-right: 50px;
+ }
 
-/* specific item styles */
+ .mainContainer {
+   margin:100px;
+ }
 
-.item-1 {
-  background: #b03532;
-}
-.item-2 {
-  background: #33a8a5;
-}
-.item-3 {
-  background: #30997a;
-}
-.item-4 {
-  background: #6a478f;
-}
-.item-5 {
-  background: #da6f2b;
-}
-.item-6 {
-  background: #3d8bb1;
-}
-.item-7 {
-  background: #e03f3f;
-}
-.item-8 {
-  background: #59a627;
-}
-.item-9 {
-  background: #4464a1;
-}
+ .filtersSection {
+   display: flex;
+   justify-content: end;
+   gap: 10px;
+ }
 
-/* .productImage {
-  overflow: hidden;
-  object-fit:scale-down;
+ .fruitsSection li {
+   list-style: none;
+ }
+ .fruitContainer {
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-gap: 2.5% 5%;
+   gap: 2.5% 5%;
+   margin-top:5%;
 
-} */
+ }
 
-.plantImage {
-  
-}
-.moreInfoBtn {
-  background-color: aqua;
-  width: 80px;
+ .sellFruit {
+   background-color: #DB6868;
+   color: white;
+   padding: 16px;
+   font-size: 1.2em;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+ }
 
-}
+ .sellFruit:hover {
+   background-color: #7E2F2F;
+ }
+
+ /* Dropdown Button */
+ .dropbtn {
+   background-color: #B2D1FF;
+   color: #613206;
+   padding: 16px;
+   font-size: 1.2em;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+ }
+
+ /* Dropdown button on hover & focus */
+ .dropbtn:hover, .dropbtn:focus {
+   background-color: #d5e3f9;
+ }
+
+ .product {
+   background-color: #ecedef;
+   border: none;
+   border-radius: 20px;
+   /* padding:38px; */
+ }
+
+ .addToCart {
+   background-color: #a5c882;
+   border:none;
+   padding: 10px;
+   border-radius: 0 0 20px 20px;
+   color: #7E2F2F;
+   font-weight: 700;
+   letter-spacing: 1.5px;
+   text-transform: uppercase;
+   transition: .4s ease-in-out;
+   width: 100%;
+ }
+
+ .addToCart:hover {
+   background-color: #DB6868;
+   color: white;
+ }
+
+ .buttonContainer{
+   display:flex;
+   justify-content: end;
+   gap:10px;
+   padding: 10px 10px 0 0;
+ }
+
+ .fa-solid {
+   color:#DB6868;
+   font-size: 2em;
+ }
+
+ .fa-solid:hover {
+   color:#7E2F2F;
+ }
+
+ .productImage {
+   display: flex;
+   justify-content: center;
+ }
+
+ .productName {
+  display: flex;
+  justify-content: center;
+ }

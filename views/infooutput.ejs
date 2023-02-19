@@ -1,116 +1,164 @@
-<!DOCTYPE html>
-<html lang="En">
+<meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-<head>
-  <meta charseat="UTF-8">
-  <title> FLORA </title>
-  <link rel="stylesheet" type="text/css" href="test.css" title="style" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- stylesheets -->
+<link rel='stylesheet' type='text/css' media='screen' href='infoOutput.css'>
 
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="floraClient.js"></script> <!--link to js file-->
+<!-- Fonts and Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
- <!-- TAILWIND START -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        },
-
-      colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        'white': '#ffffff',
-        'fruitBlue': '#d5e3f9',
-        'fruitBlueDark':'#B2D1FF',
-        'fruitYellow':'#FFF48D',
-        'fruitPink': '#DB6868',
-        'fruitPinkDark':'#7E2F2',
-        'fruitBrown': '#613206',
-        'dangerRed': '#FF0000'
-    },
-      }
-    }
-  }
-  </script>
-<!-- TAILWIND END -->
-
-  <script src="data.js" defer></script>
-  <script src="floraClient.js"></script> <!--link to js file-->
 
 </head>
-
 <body>
 
-  <h1 class="text-3xl font-bold underline text-black">
-    Hello world!
-  </h1>
+  <header>
+    <!-- Navigation at top starts here -->
+    <!-- <div class="navBarContainer">
+      <p>navigation</p>
+      <div class="navlogo">
+        <p>navigation logo</p>
+      </div>
+      <div class="navMenu">
+        <p>navigation menu</p>
+      </div>
+    </div> -->
+    <!-- Navigation ends here -->
+    <!-- Banner starts here -->
+    <!-- <div class="bannerContainer">
+      <div class="bannerTxt">
+        <h1>Welcome to Fruit Cart!</h1>
+      </div>
+      <div class="bannerImg">
+        <img src="https://dodo.ac/np/images/9/92/Fruit_Basket_NH_Icon.png" alt="Basket of Fruit">
+      </div>
+    </div> -->
+    <!-- Banner ends here -->
+  </header>
+  <main>
+    <div class="mainContainer">
+      <!-- filters navigation starts here -->
+      <!-- <section class="filtersSection">
 
-  
-  <section class="fruitsSection">
+        <select class="dropbtn">
+          <option selected disabled>Sort By</option>
+          <option>Price: Highest First</option>
+          <option>Price: Lowest First</option>
+          <option>Posted: Oldest First</option>
+          <option>Posted: Newest First</option>
+        </select>
 
-    <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pt-12 flex justify-center">
+        <select class="dropbtn">
+          <option selected disabled>Filter</option>
+          <option>All Fruit</option>
+          <option>My Fruit</option>
+        </select>
 
-<!-- CARD STARTS HERE -->
-        <div class="product fruit_id-10 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
-            <div class="click-to-pop " id="moreInfoBtn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter10">
-            <div class="productImage rounded-t-2xl mb-1  max-w-xs hover:scale-105 transition duration-300 ease-in-out">
-                <img id="fruitImage" class="h-48 w-full object-cover" src="https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/milkweed-plant-monarch-butterfly-shutterstock-com_12623.jpg" alt="fruits">
+        <button class="sellFruit">Sell Fruit</button>
+
+      </section> -->
+      <!-- Filters navigation ends here -->
+
+      <!-- Fruit listings start here -->
+      <!-- <h2>Fruit for Sale</h2> -->
+      <p id="out">placeHolder</p>
+      <section class="fruitsSection">
+        <ul class="fruitContainer">
+
+          <li class="product">
+            <!-- <div class="buttonContainer">
+              <i class="fa-solid fa-circle-info"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div> -->
+            <div class="productImage">
+              <img src="https://dodo.ac/np/images/2/23/Sapling_NH_Inv_Icon.png" alt="fruits">
             </div>
-          </div>
-            <div class="flex justify-between mt-3 mb-2">
-              <strong class="text-fruitBrown productName text-lg flex px-3">Milkweed</strong>
-              <strong class="text-fruitBrown productName text-lg flex px-3">LOREM</strong>
-                <!-- <i class="fa-solid fa-heart-circle-plus fav_btn flex px-3" data-id="plus" data-fruitid="10"></i> -->
+            <h3 class="productName" id="plantOne">Milkweed</h3>
+            <!-- <div class="priceContainer">
+              <p class="price">LOREM</p>
+            </div> -->
+            <button class="addToCart">More Info</button>
+
+          <li class="product">
+            <!-- <div class="buttonContainer">
+              <i class="fa-solid fa-circle-info"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div> -->
+            <div class="productImage">
+              <img src="https://dodo.ac/np/images/2/23/Sapling_NH_Inv_Icon.png" alt="fruits">
             </div>
-                <a href="/milkweed"><button class="moreInfoBtn cart_btn cart_plus" data-id="plus" data-fruitid="10">More Info</button></a>
-        </div>
-<!-- CARD ENDS HERE -->
+            <h3 class="productName" id="plantTwo">LOREM</h3>
+            <!-- <div class="priceContainer">
+              <p class="price">IPSUM</p>
+            </div> -->
+            <button class="addToCart">More Info</button>
 
-<!-- CARD STARTS HERE -->
-<div class="product fruit_id-10 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
-  <div class="productImage rounded-t-2xl mb-1  max-w-xs hover:scale-105 transition duration-300 ease-in-out">
-      <img id="fruitImage" class="h-48 w-full object-cover" src="https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/milkweed-plant-monarch-butterfly-shutterstock-com_12623.jpg" alt="fruits">
-  </div>
+          <li class="product">
+            <!-- <div class="buttonContainer">
+              <i class="fa-solid fa-circle-info"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div> -->
+            <div class="productImage">
+              <img src="https://dodo.ac/np/images/2/23/Sapling_NH_Inv_Icon.png" alt="fruits">
+            </div>
+            <h3 class="productName" id="plantThree">LOREM</h3>
+            <!-- <div class="priceContainer">
+              <p class="price">IPSUM</p>
+            </div> -->
+            <button class="addToCart">More Info</button>
 
-  <div class="flex justify-between mt-3 mb-2">
-    <strong class="text-fruitBrown productName text-lg flex px-3">Sunflower</strong>
-    <strong class="text-fruitBrown productName text-lg flex px-3">LOREM</strong>
-      <!-- <i class="fa-solid fa-heart-circle-plus fav_btn flex px-3" data-id="plus" data-fruitid="10"></i> -->
-  </div>
-      <a href="/plant2"><button class="add_to_cart cart_btn cart_plus" data-id="plus" data-fruitid="10">More Info</button></a>
-</div>
-<!-- CARD ENDS HERE -->
+          <li class="product">
+            <!-- <div class="buttonContainer">
+              <i class="fa-solid fa-circle-info"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div> -->
+            <div class="productImage">
+              <img src="https://dodo.ac/np/images/2/23/Sapling_NH_Inv_Icon.png" alt="fruits">
+            </div>
+            <h3 class="productName">LOREM</h3>
+            <!-- <div class="priceContainer">
+              <p class="price">IPSUM</p>
+            </div> -->
+            <button class="addToCart">More Info</button>
 
-<!-- CARD STARTS HERE -->
-<div class="product fruit_id-10 cursor-pointer relative overflow-hidden bg-no-repeat bg-cover max-w-xs">
-  <div class="click-to-pop " id="moreInfoBtn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter10">
-  <div class="productImage rounded-t-2xl mb-1  max-w-xs hover:scale-105 transition duration-300 ease-in-out">
-      <img id="fruitImage" class="h-48 w-full object-cover" src="https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/milkweed-plant-monarch-butterfly-shutterstock-com_12623.jpg" alt="fruits">
-  </div>
-</div>
-  <div class="flex justify-between mt-3 mb-2">
-    <strong class="text-fruitBrown productName text-lg flex px-3">Sunflower</strong>
-    <strong class="text-fruitBrown productName text-lg flex px-3">LOREM</strong>
-      <!-- <i class="fa-solid fa-heart-circle-plus fav_btn flex px-3" data-id="plus" data-fruitid="10"></i> -->
-  </div>
-      <a href="/plant3"><button class="add_to_cart cart_btn cart_plus" data-id="plus" data-fruitid="10">More Info</button></a>
-</div>
-<!-- CARD ENDS HERE -->
-    
+          <li class="product">
+            <!-- <div class="buttonContainer">
+              <i class="fa-solid fa-circle-info"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div> -->
+            <div class="productImage">
+              <img src="https://dodo.ac/np/images/2/23/Sapling_NH_Inv_Icon.png" alt="fruits">
+            </div>
+            <h3 class="productName">LOREM</h3>
+            <!-- <div class="priceContainer">
+              <p class="price">IPSUM</p>
+            </div> -->
+            <button class="addToCart">More Info</button>
+
+          <li class="product">
+            <!-- <div class="buttonContainer">
+              <i class="fa-solid fa-circle-info"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div> -->
+            <div class="productImage">
+              <img src="https://dodo.ac/np/images/2/23/Sapling_NH_Inv_Icon.png" alt="fruits">
+            </div>
+            <h3 class="productName">LOREM</h3>
+            <!-- <div class="priceContainer">
+              <p class="price">IPSUM</p>
+            </div> -->
+            <button class="addToCart">More Info</button>
+
+        </li>
+
+        </ul>
+      </section>
     </div>
-    </section>
-  
-  <!-- <h1>LOOK HERE</h1>
-  <span>This species is called:</span>
-  <span id="plant"></span>
-  <span id="species"></span> -->
+    <!-- fruit listings end here -->
+  </div>
+  </main>
 
-</body>
-
-</html>
+  <footer>
