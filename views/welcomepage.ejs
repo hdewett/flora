@@ -8,24 +8,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="floraClient.js"></script> <!--link to js file-->
   <link rel="icon" type="image/x-icon" href="faviconF.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1> flora </h1> <!--change header-->
+    <h1> Flora </h1> <!--change header-->
   </header>
   <div id="startBoard">
-    <img id="tree" src="tree1.jpg"><br><br>
+    <img id="tree" src="photos/bg.png"><br><br>
   </div>
   <div id="search">
     <form>
-      <label for="location">Where do you live?</label>
-      <input type="text" id="location" name="location">
+      <label for="location"></label>
+      <input type="text" id="location" name="location" placeholder="Your Garden's location? ie. Toronto">
       <button type="button" onclick="load()">done</button>
     </form>
   </div>
   <div id="start">
-    <button onclick="start()" id="start">start</button>
+    <button onclick="start()" id="start" class="start">Start</button>
     <!--when the button click, centre photo slides to reveal form for location-->
   </div>
 
