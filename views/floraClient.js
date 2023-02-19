@@ -39,7 +39,6 @@ function response(data,status) {
         var resp = response['result'];
         resp = resp.replace(/[0-9]|-|\.|The native plants are| the |The three native plants are/gi,'');
         resp = resp.replace(/,| and |\n/gi,'|');
-        document.getElementById("test").innerHTML=resp;
         const arr=resp.split("|");
         document.getElementById("plant1").innerHTML=arr[1];
         document.getElementById("plant2").innerHTML=arr[2];
