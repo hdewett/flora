@@ -1,11 +1,15 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   padding-top: 20px;
   background: #fbfbfb;
-}
+} */
 
 /* items */
 
-.grid-1 {
+/* .grid-1 {
   display: grid;
   grid-template-columns: 350px 350px 350px;
   grid-template-rows: 400px 400px 400px;
@@ -16,7 +20,7 @@ body {
   color: white;
   font-size: 20px;
   padding: 20px;
-  }
+  } */
 
 /* specific item styles */
 
@@ -48,11 +52,6 @@ body {
   background: #4464a1;
 }
 
-/* .productImage {
-  overflow: hidden;
-  object-fit:scale-down;
-
-} */
 
 .plantImage {
   
