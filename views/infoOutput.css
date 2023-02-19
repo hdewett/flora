@@ -70,7 +70,7 @@ body {
    background-color: #d5e3f9;
  }
 
- .product {
+ .plant {
    background-color: #ecedef;
    border: none;
    border-radius: 20px;
@@ -111,7 +111,7 @@ body {
    color:#7E2F2F;
  }
 
- .productImage {
+ .plantImage {
    display: flex;
    justify-content: center;
  }
