@@ -6,6 +6,11 @@ html {
   overflow: scroll;
 }
 
+body {
+  background-image: url('photos/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 h1 {
   color: white;
   font-size: 100px;
@@ -17,7 +22,12 @@ h2 {
   font-size: 40px;
   text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }
+#tree {
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: -5%;
 
+}
 .tree {
   position: relative;
   opacity: 0;
@@ -26,12 +36,12 @@ h2 {
 
 @keyframes slide {
   0% {
-    top: 0vh;
+    top: 0vw;
     opacity: 1;
   }
 
   99% {
-    top: 100vh;
+    top: 100vw;
     opacity: 0;
   }
   100% {
@@ -57,13 +67,11 @@ input[type=text] {
 }
 
 .start {
-  position: absolute;
   background-color: white;
   border-radius: 70px;
-  font-size: 50px;
+  font-size: 30px;
   width: 20%;
-  padding: 2%;
-  right: 40%;
+  padding: 1%;
   
 }
 #done {
