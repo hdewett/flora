@@ -48,9 +48,8 @@ function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result']; alert("RAW: "+resp);
-        /*var out = "";
-        for (var i = 0;i<resp.length;i++) {
+        var resp = JSON.parse(response['result']);
+        /*for (var i = 0;i<resp.length;i++) {
             out= out + resp[i];
             out = out + "<br/>";
         }
