@@ -75,14 +75,6 @@ app.get('/infooutput',(req,res) => {
     res.render('infooutput.ejs');
 })
 
-app.get('/test',(req,res) => {
-    res.render('test.ejs');
-})
-
-app.get('/test1',(req,res) => {
-    res.render('test1.ejs');
-})
-
 
 
 console.log("Server is running!");

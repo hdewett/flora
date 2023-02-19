@@ -10,6 +10,9 @@ function start() {
 function load() {
     loc = document.getElementById("location").value;
     document.location.href="/infooutput",true;
+}
+
+function send() {
     $.post(
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
@@ -45,14 +48,12 @@ function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        alert("here");
-        //var resp = JSON.parse(response['result']); 
-        document.getElementById("out").innerHTML=response['result'];
+        var resp = JSON.parse(response['result']); 
         /*var p1 = resp[0];var p2=resp[1];var p3=resp[2];
-        alert(p1);
-        document.getElementById("plantOne").setAttribute(response['result'][0]);
+        alert(p1);*/
+        document.getElementById("plantOne").setAttribute(resp[0]);
         document.getElementById("plantTwo").setAttribute(resp[1]);
-        document.getElementById("plantThree").setAttribute(resp[2]);*/
+        document.getElementById("plantThree").setAttribute(resp[2]);
     }
     /*else if (response['action']=='stringParsed') {
         alert("step2Check");
