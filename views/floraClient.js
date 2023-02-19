@@ -1,16 +1,18 @@
 
 var url = "http://localhost:3000/post";
-
+var loc;
 
 function start() {
-    alert("hello");
         document.getElementById("tree").className="tree";
         document.getElementById("start").style.display="none";
         document.getElementById("search").style.visibility="visible";
 }
-
 function load() {
-    var loc = document.getElementById("location").value;
+    loc = document.getElementById("location").value;
+    document.location.href="/infooutput",true;
+}
+
+function send() {
     $.post(
         url+'?data='+JSON.stringify
         ({ //compare the input name with the database
@@ -20,17 +22,15 @@ function load() {
         response);
 }
 
-/*function turnArray(s) {
-    var out = [];var i; var line;
-    for (i=0;i<s.length;i++) {
-        if (s.charAt(i)=="\n") {
-            alert("brek");
-            out.push(line); 
-            line="";
-        }
-        line=line+s.charAt(i);
-    }
-} */
+function parse(s) {
+    $.post(
+        url+'?data='+JSON.stringify
+        ({ //compare the input name with the database
+            'string': s,
+            'action':'parseString'
+        }),
+        response);
+}
 
 function turnArray(s) {
     var out=["start"];
@@ -48,11 +48,21 @@ function response(data,status) {
     var response = JSON.parse(data);
     console.log(data);
     if (response['action'] == 'infoLoaded') {
-        var resp = response['result']; 
-        resp=resp.replace(/\n/g,"<br/>");
+        var resp = JSON.parse(response['result']);
+        /*for (var i = 0;i<resp.length;i++) {
+            out= out + resp[i];
+            out = out + "<br/>";
+        }
+        var strcpy=resp.slice(); 
+        parse(strcpy);*/
+        /*resp=resp.replace(/\n/g,"<br/>");
+        resp=resp.replace(",","<br/>");*/
         document.getElementById("output").innerHTML=resp;
-        var strcpy = resp.slice();
-        turnArray(strcpy);
     }
+    /*else if (response['action']=='stringParsed') {
+        alert("step2Check");
+        var resp2 = response['result'];
+        document.getElementById("output").innerHTML=resp2;
+    }*/
     
 }
