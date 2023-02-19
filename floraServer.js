@@ -15,7 +15,7 @@ app.post('/post',(req,res) => {
     console.log("Received: ");
     //console.log(JSON.parse(req.query['data']));
     var z = JSON.parse(req.query['data']);
-    if (z['action']=='searchInfo') {
+    if (z['action']=='locInfo') {
         var loc = "Three native plants in " + z['location'] + 'just names';
          // This is your trial API key
         (async () => {
@@ -35,31 +35,38 @@ app.post('/post',(req,res) => {
         console.log(plantList);                                                  
         var jsontext = JSON.stringify({
             'result':plantList,
-            'action':'infoLoaded'
+            'action':'locInfoLoaded'
             });
             console.log(jsontext);
             res.send(jsontext);
         })();
     //check if the request action is evaluatePassword
     }
-    /*else if (z['action']=='parseString') {
-        var plantList = ["flora"];
-        //cohere.init('h7JSQUtT7IFzLNDPRqTpxTbjvupYA3e7sbRYCrLe');
+    else if (z['action']=='plantInfo') {
+        var plantName = z['plant'];
         (async () => {
-        const response = await cohere.classify({
-        model: 'large',
-        inputs: ["swamp milkweed", "rose", "oaktree", "pine tree", "the are are swamped with"],
-        examples: [{"text": "rose", "label": "flower/plant"}, {"text": "oaktree", "label": "flower/plant"}, {"text": "swamp milkweed", "label": "flower/plant"}, {"text": "the", "label": "n/a"}, {"text": "are", "label": "n/a"}, {"text": "some", "label": "n/a"}, {"text": "The three native plants are the", "label": "n/a"}, {"text": "and", "label": "n/a"}]
-        });   var resp2=`${JSON.stringify(response.body.classifications)}`;
-        console.log(`The confidence levels of the labels are`+res);
+            const response = await cohere.generate({
+            model: 'command-xlarge-nightly',
+            prompt: plantName,
+            max_tokens: 300,
+            temperature: 0.9,
+            k: 0,
+            p: 0.75,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+            });
+        var info = `${response.body.generations[0].text}`;
+        console.log(info);                                                  
         var jsontext = JSON.stringify({
-            'result':resp2,
-            'action':'stringParsed'
+            'result':info,
+            'action':'plantInfoLoaded'
             });
             console.log(jsontext);
             res.send(jsontext);
         })();
-    }*/
+    }
 }
 ).listen(port);
 
