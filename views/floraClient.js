@@ -49,15 +49,21 @@ function response(data,status) {
     console.log(data);
     if (response['action'] == 'infoLoaded') {
         var resp = response['result']; alert("RAW: "+resp);
-        var strcpy=resp.slice(); parse(s);
+        /*var out = "";
+        for (var i = 0;i<resp.length;i++) {
+            out= out + resp[i];
+            out = out + "<br/>";
+        }
+        var strcpy=resp.slice(); 
+        parse(strcpy);*/
         /*resp=resp.replace(/\n/g,"<br/>");
-        resp=resp.replace(",","<br/>");
-        document.getElementById("output").innerHTML=resp;*/
+        resp=resp.replace(",","<br/>");*/
+        document.getElementById("output").innerHTML=resp;
     }
-    else if (response['action']=='stringParsed') {
+    /*else if (response['action']=='stringParsed') {
         alert("step2Check");
         var resp2 = response['result'];
         document.getElementById("output").innerHTML=resp2;
-    }
+    }*/
     
 }
